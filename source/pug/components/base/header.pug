@@ -1,0 +1,7 @@
+mixin header(headerMods, currentUrl)
+  header.header(class=headerMods)
+    .container
+      span.header__logo
+        +picture("content", "logo-img", "png", 118, 116, "logo").header__logo-img
+        img(src="img/svg/logo-text.svg", width="188", height="72" alt="logo").header__logo-text
+

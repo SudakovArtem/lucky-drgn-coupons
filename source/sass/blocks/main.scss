@@ -1,0 +1,233 @@
+.main {
+  position: relative;
+
+  @include tablet-desktop {
+    padding-top: 4.9rem;
+  }
+
+  @include mobile {
+    padding-top: 0.6rem;
+    padding-bottom: 8.6rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.main__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include tablet-desktop {
+    margin-bottom: -16.5rem;
+    padding-top: 5.5rem;
+  }
+
+  @include mobile {
+    margin-bottom: -5.5rem;
+    padding-top: 3.3rem;
+  }
+
+  picture {
+    display: contents;
+  }
+
+  .art {
+    @include tablet-desktop {
+      position: absolute;
+      top: -18.4rem;
+      width: 192.1rem;
+      height: 96.8rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.main__arrow {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+
+  @include tablet-desktop {
+    width: 9.7rem;
+    height: 10.4rem;
+  }
+
+  @include mobile {
+    width: 5rem;
+    height: 5.5rem;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.main__wheel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet-desktop {
+    width: 68.9rem;
+    height: 68.9rem;
+  }
+
+  @include mobile {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .wheel-shadow {
+    position: absolute;
+    object-fit: contain;
+
+    @include tablet-desktop {
+      width: 98.1rem;
+      height: 98.1rem;
+    }
+
+    @include mobile {
+      width: 43rem;
+      height: 43rem;
+    }
+  }
+}
+
+.main__wheel-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rest 3s infinite alternate;
+
+  &[data-spin="first"] {
+    animation: 4s firstSpin ease-out forwards;
+  }
+
+  &[data-spin="second"] {
+    @include tablet-desktop {
+      animation: 4s secondSpin ease-out forwards;
+    }
+
+    @include mobile {
+      animation: 4s secondSpinMob ease-out forwards;
+    }
+  }
+
+  .wheel-img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.main__button {
+  font-family: $ff-exo;
+  font-weight: 900;
+  line-height: normal;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0 2.95rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  text-transform: uppercase;
+  color: $color-free-speech-red-2;
+  border: none;
+  border-radius: 20rem;
+  outline: none;
+  background: $color-white-smoke;
+  box-shadow: 0 1.4rem 0.7rem 0 $color-default-white inset, 0 -1.2rem 1.2rem 0 rgba($color-default-black, 0.25) inset, 0 0 2.4rem 0 rgba($color-default-black, 0.72);
+
+  @include tablet-desktop {
+    font-size: 3.6rem;
+    width: 22.4rem;
+    height: 22.4rem;
+    text-shadow: 0 0.4rem 0.4rem rgba($color-default-white, 0.25);
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+    width: 9.38rem;
+    height: 9.38rem;
+    text-shadow: 0 0.17rem 0.17rem rgba($color-default-white, 0.25);
+  }
+
+  @include hover {
+    &:hover {
+      box-shadow: 0 1.4rem 0.7rem 0 $color-default-white inset, 0 -1.2rem 1.2rem 0 rgba($color-default-black, 0.25) inset;
+    }
+  }
+}
+
+.main__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1.2rem;
+
+  &::before {
+    @include tablet-desktop {
+      position: absolute;
+      top: 139px;
+      width: 1229px;
+      height: 102px;
+      content: "";
+      background-image: url("../img/svg/art-shadow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  img {
+    z-index: 1;
+
+    @include tablet-desktop {
+      width: 787px;
+      height: 340px;
+    }
+
+    @include mobile {
+      width: 27.4rem;
+      height: 11.9rem;
+      transform: translateX(0.4rem);
+    }
+  }
+}
+
+.main__prompt {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+
+  @include tablet-desktop {
+    bottom: 12.2rem;
+  }
+
+  @include mobile {
+    bottom: 1.9rem;
+  }
+}

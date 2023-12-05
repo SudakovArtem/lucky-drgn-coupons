@@ -1,0 +1,25 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  picture
+    source(type="image/webp", srcset="img/content/main-bg.webp, img/content/main-bg@2x.webp 2x")
+    source(type='image/webp' media='(max-width: 767px)' srcset='img/content/main-bg-mob.webp, img/content/main-bg-mob@2x.webp 2x')
+    source(type='image/png', media='(max-width: 767px)' srcset='img/content/main-bg-mob.png, img/content/main-bg-mob@2x.png 2x')
+    img(src="img/content/main-bg.jpg", srcset="img/content/main-bg-mob@2x.jpg 2x" width=1920, height=1381, alt="").bg
+  main
+    +main()
+
+block modals
+  +modal("modal--spin")(data-modal="spin")
+    +modal-spin()
+  +modal("modal--success")(data-modal="success")
+    +modal-success()
