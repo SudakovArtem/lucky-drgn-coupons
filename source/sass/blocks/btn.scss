@@ -6,7 +6,7 @@
   flex-shrink: 0;
   justify-content: center;
   cursor: pointer;
-  transition: opacity $trans-default;
+  transition: box-shadow $trans-default;
   text-transform: uppercase;
   color: $color-default-white;
   border: none;
@@ -35,6 +35,6 @@
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    box-shadow: 0 0 6px 4px rgba($color-default-white, 0.51);
   }
 }
